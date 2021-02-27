@@ -1,0 +1,65 @@
+<style>
+    .pen{
+        width: 1124px;
+        height: 800px;
+        background-color: aqua;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .vid-cerceve{
+        
+       width: 275px;  
+       height: 200px; 
+       background:white;  
+       border: 1px solid red;
+       margin-top: 40px;
+       margin-left: 40px; 
+       margin-right: 40px;
+       margin-bottom: 40px; 
+       display: inline-block;
+       box-shadow: 5px 10px #888888;
+        
+    }
+    .vid-title{
+        width: 100%; 
+        height: 25px;
+        background-color: red; 
+        text-align: left; 
+        margin-top: 179px;
+    }
+</style>
+    
+{%extends "layout.html"%}
+    {% block body %}
+    {%if videos %}
+    <ul class="list-group">
+        <li style="display:inline">
+    {%for video in videos %}
+
+    
+        
+        <div style="width: 275px;  height: 200px; background:white;  border: 1px solid red;  margin-top: 40px;
+    margin-left: 40px;  margin-right: 40px;  margin-bottom: 40px; display: inline-block; box-shadow: 5px 10px #888888;">
+        
+
+
+        <iframe width="100%" height="168px" src={{video.videoUrl}} 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+        gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!--<video src="{{video.content}}" controls></video>-->
+
+        
+        <div style="width: 100%; height: 25px;  background-color: red; text-align: left;">
+            <p><a href="#" style="color:black;">{{video.video_title}}</a> </p>
+        </div>
+    </div>
+        
+        
+        
+    {%endfor%}
+</li>
+  </ul>
+
+    {%endif%}
+
+    {%endblock%}

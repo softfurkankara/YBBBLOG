@@ -1,0 +1,44 @@
+<style>
+    .cart:hover{
+        opacity: 0.8;
+
+    }
+    .textt{
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: Copperplate, Papyrus, fantasy;
+        font-size:20px;
+        color: black;
+    }
+    
+</style>
+{%extends "layout.html"%}
+
+{%block body%}
+<div class="konu-pencersi">
+    <ul class="konu-ul">
+{%if dersadlari %}
+
+
+    {%for ders in dersadlari %}
+    <div class="card cart" style="width: 18rem;display: inline-block;margin-left: 40px; margin-top: 15px;">
+        <img class="card-img-top" src="{{ders.kapak}}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text textt" >
+            <a href="/{{ders.sinavAdi}}" class="a">{{ders.sinavAdi}}</a></p>
+        </div>
+      </div>
+    
+    {%endfor%}
+
+    {%else%}
+  
+    <div class="alert alert-danger">Henüz Makaleniz Bulunmuyor.</div>
+     
+    {%endif%}
+        
+        
+    </ul>
+</div>
+{%endblock%}

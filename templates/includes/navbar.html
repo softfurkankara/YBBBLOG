@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Yektuğ Mat</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Anasayfa <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">Hakkımda</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Problemler Soru Bankası Çözümleri
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/tytbaski1">TYT Problemler 1.Baskı</a>
+          <a class="dropdown-item" href="/tytbaski2">TYT Problemler 2.Baskı</a>
+          <a class="dropdown-item" href="/dgsbaski1">DGS Problemler 1.Baskı</a>
+          <a class="dropdown-item" href="/dgsbaski2">DGS Problemler 2.Baskı</a>
+          <a class="dropdown-item" href="/kpssbaski1">KPSS Problemler</a>
+          <a class="dropdown-item" href="/alesbaski1">ALES Problemler</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cebir Soru Bankası Çözümleri
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/dgscebir">DGS Cebir</a>
+          <a class="dropdown-item" href="/kpsscebir">KPSS Cebir</a>
+          <a class="dropdown-item" href="/alescebir">ALES Cebir</a>
+          
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dersler
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/dgs">DGS</a>
+          <a class="dropdown-item" href="/kpss">KPSS</a>
+          <a class="dropdown-item" href="/ales">ALES</a>
+          <a class="dropdown-item" href="/tyt">TYT</a>
+          <a class="dropdown-item" href="/ayt">AYT</a>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+     
+      {% if session["loggedadmin_in"]%}
+      <li class="nav-item active">
+        <a class="nav-link " href="/dashboard">Video Ekle</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link " href="/logout">Çıkış Yap</a>
+      </li>
+      {%elif session["loggedadmin_in"]%}
+      <!--<li class="nav-item active">
+        <a class="nav-link " href="/logout">Çıkış Yap</a>
+      </li>-->
+
+      {%else%}
+      <li class="nav-item active">
+        <a class="nav-link " href="/adminlogin">Admin Girişi Yap</a>
+      </li>
+
+      <!--<li class="nav-item active">
+        <a class="nav-link " href="/login">Giriş Yap</a>
+      </li> -->
+
+      
+     <!-- <li class="nav-item active">
+        <a class="nav-link " href="/register">Kayıt Olun</a>
+      </li>-->
+
+      {% endif%}
+      
+
+
+
+      
+      
+
+      
+      
+      
+    </ul>
+  </div>
+</nav>
+
+
+

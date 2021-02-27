@@ -1,0 +1,15 @@
+{%extends "layout.html"%}
+
+{% block body%}
+<h3>Konu Oluştur</h3>
+<hr>
+{%from "includes/formhelpers.html" import render_field%}
+
+<form method="post" style="height: 350px;">
+    
+   <!--{{ render_field(form.sınavAdı,class="form-control") }}--> 
+   {{ render_field(form.konununAdı,class="form-control") }}
+    {{ render_field(form.alan,class="form-control") }}
+    <button type="submit" class="btn btn-danger">Konu Ekle</button>
+</form>
+{%endblock%}

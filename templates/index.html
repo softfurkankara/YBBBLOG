@@ -1,0 +1,63 @@
+<style>
+.frame{
+    border: 1px solid gray;
+  
+}
+.sec2{
+   width:100%;
+   height:auto; 
+   background-color:blue;
+}
+
+</style>
+{% extends "layout.html" %}
+
+{%block body%}
+
+<div class="jumbotron text-center ">
+<h3>Yektuğ Mat Sayfasına Hoş Geldiniz.</h3>
+ <p>Bu sayfa da sınav sistemleri hakkında güncel haberlere ulaşabilir ve videolarımıza ulaşabilirsiniz.</p>
+</div>
+
+<section class="sec2">
+ 
+  <div class="image-box">
+    <img src="{{url_for('static',filename='img/books.png')}}" class="img-fluid" alt="Responsive image">
+  
+ </div>
+ </section>  
+<section style="width: 100%; height: auto;">
+    
+    {%if articles %}
+
+    {%for article in articles %}
+
+    
+    <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{article.title}}</h5>
+          <p class="card-text">{{article.cont}}</p>
+          <p class="card-text"><small class="text-muted"><a href="/article/{{article.id}}">Devamını Oku...</a></small></p>
+        </div>
+      </div>
+    
+        
+   
+        
+        
+    {%endfor%}
+
+
+
+{% else %}
+<div class="alert alert-danger">Bu blokta henüz makale bulunmuyor.</div>
+
+{%endif%}
+
+
+    
+ </section>
+ 
+
+
+ {%endblock%}
